@@ -1,4 +1,4 @@
-#Level One
+#Level Two
 
 import pandas as pd
 
@@ -10,15 +10,11 @@ data = {
     "location" : ["us-east-1", "Banglore", "us-west-2"]
 }
 
+
 df = pd.DataFrame(data)
-print(df)
 
-print(df["server_name"])
+print(df[(df["cpu"]>70) & (df["memory"]>60)])
 
-print(df[["server_name", "cpu"]])
+print(df[(df["cpu"]>80) | (df["cpu"]>80)])
 
-print(df[df["cpu"]>70])
-
-print(df[df["status"]=="failed"])
-
-print(df[df["location"]=="Banglore"])
+print(df[(df["status"]=="running")& (df["location"]=="us-east-1")])
